@@ -1,5 +1,6 @@
 /* CSS Custom Properties */
 :root {
+  --blueGrad: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
@@ -21,7 +22,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);;
   padding: 2vmin;
   height: 100vh;
 }
