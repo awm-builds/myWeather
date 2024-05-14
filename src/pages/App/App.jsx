@@ -12,18 +12,13 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
-          <>
             <NavBar user={user} setUser={setUser} />
-            <Routes>
+              <Routes>
               {/* Route components in here */}
-              <Route path="/orders/new" element={<ProfilePage />} />
-              <Route path="/orders" element={<ThirdPage />} />
+              <Route path="/" element={<MyWeather />} />
+              <Route path="/ProfilePage" element={<ProfilePage />} />
+              <Route path="/ThirdPage" element={<ThirdPage />} />
             </Routes>
-          </>
-          :
-          <MyWeather setUser={setUser} />
-      }
     </main>
   );
 }
