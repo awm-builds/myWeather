@@ -7,6 +7,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import ThirdPage from '../ThirdPage/ThirdPage';
 import NavBar from '../../components/NavBar/NavBar';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 

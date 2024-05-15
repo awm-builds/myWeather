@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import LocTemp from '../../components/LocTemp/LocTemp';
 
 export default function MyWeather({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -8,14 +9,14 @@ export default function MyWeather({ setUser }) {
     <main>
       <h1>myWeather</h1>
         <div id="weather_wrapper">
-          <div class="weatherCard">
-            <div class="currentTemp">
-              <span class="temp">65&deg;</span>
-              <span class="location">Boston</span>
+          <div className="weatherCard">
+            <div className="currentTemp">
+            <span className="temp">{<LocTemp/>}</span>
+              <span className="location">Boston</span>
             </div>
-            <div class="currentWeather">
-              <span class="conditions">Condition<br/>Icon</span>
-              <div class="info">
+            <div className="currentWeather">
+              <span className="conditions">Condition<br/>Icon</span>
+              <div className="info">
                 Weather Desc.
               </div>
             </div>
