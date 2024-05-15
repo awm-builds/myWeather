@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import LocTemp from '../../components/LocTemp/LocTemp';
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
 
@@ -36,22 +35,23 @@ export default function MyWeather({ setUser }) {
       <h1>myWeather</h1>
         <div id="weather_wrapper">
           <div className="weatherCard">
-            <div className="currentTemp">
+          <div className="currentTemp">
+            <span className="tempLabel">Temperature</span>
             <span className="temp">{weather?.temp}&#8457;</span>
             <br />
             <span className="minMax">
-            Low: {weather?.tempMin}&#8457;
+            Low:&nbsp;&nbsp;{weather?.tempMin}&#8457;
               <br />
-            High: {weather?.tempMax}&#8457;
+            High:&nbsp;&nbsp;{weather?.tempMax}&#8457;
             </span>
               <span className="location"></span>
             </div>
             <div className="currentWeather">
             <span className="conditions">{weather?.conditions}<br /><img src={`https://openweathermap.org/img/wn/${weather?.icon}@2x.png`}/></span>
             <div className="info">
-              <span>Humidity: {weather?.humidity}</span>
+              <span>Humidity:&nbsp;&nbsp;{weather?.humidity}%</span>
               <br />
-              <span>Feels like: {weather?.feelsLike}&#8457;</span>
+              <span>Feels like:&nbsp;&nbsp;{weather?.feelsLike}&#8457;</span>
               </div>
             </div>
           </div>
