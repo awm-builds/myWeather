@@ -37,13 +37,21 @@ export default function MyWeather({ setUser }) {
         <div id="weather_wrapper">
           <div className="weatherCard">
             <div className="currentTemp">
-            <span className="temp"></span>
-              <span className="location">You're Current Location:</span>
+            <span className="temp">{weather?.temp}&#8457;</span>
+            <br />
+            <span className="minMax">
+            Low: {weather?.tempMin}&#8457;
+              <br />
+            High: {weather?.tempMax}&#8457;
+            </span>
+              <span className="location"></span>
             </div>
             <div className="currentWeather">
             <span className="conditions">{weather?.conditions}<br /><img src={`https://openweathermap.org/img/wn/${weather?.icon}@2x.png`}/></span>
-              <div className="info">
-                Weather Desc.
+            <div className="info">
+              <span>Humidity: {weather?.humidity}</span>
+              <br />
+              <span>Feels like: {weather?.feelsLike}&#8457;</span>
               </div>
             </div>
           </div>
