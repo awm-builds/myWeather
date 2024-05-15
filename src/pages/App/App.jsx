@@ -14,7 +14,7 @@ export default function App() {
   return (
     <main className="App">
             <NavBar user={user} setUser={setUser} />
-              <Routes>
+            <Routes>
               {/* Route components in here */}
               <Route path="/" element={<MyWeather />} />
               <Route path="/ProfilePage" element={<ProfilePage />} />

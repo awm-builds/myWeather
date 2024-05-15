@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       {/* <Link to="/orders/new">New Order</Link> */}
       &nbsp;&nbsp;
-      <span>DAY, DD MONTH, Time {/* user.name */}</span>
+      <span>{new Date().toLocaleString()}</span>
       &nbsp; | &nbsp;<Link to="/" onClick={handleLogOut}>SIGN IN</Link>
     </nav>
   );
