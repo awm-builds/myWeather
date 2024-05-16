@@ -3,6 +3,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
+import LocTempPage from "../LocTempPage/LocTempPage";
 
 export default function MyWeather({ setUser }) {
   const [coords,setCoords] = useState(null);
@@ -32,30 +33,7 @@ export default function MyWeather({ setUser }) {
 
   return (
     <main>
-      <h1>myWeather</h1>
-        <div id="weather_wrapper">
-          <div className="weatherCard">
-          <div className="currentTemp">
-            <span className="tempLabel">Temperature</span>
-            <span className="temp">{weather?.temp}&#8457;</span>
-            <br />
-            <span className="minMax">
-            Low:&nbsp;&nbsp;{weather?.tempMin}&#8457;
-              <br />
-            High:&nbsp;&nbsp;{weather?.tempMax}&#8457;
-            </span>
-              <span className="location"></span>
-            </div>
-            <div className="currentWeather">
-            <span className="conditions">{weather?.conditions}<br /><img src={`https://openweathermap.org/img/wn/${weather?.icon}@2x.png`}/></span>
-            <div className="info">
-              <span>Humidity:&nbsp;&nbsp;{weather?.humidity}%</span>
-              <br />
-              <span>Feels like:&nbsp;&nbsp;{weather?.feelsLike}&#8457;</span>
-              </div>
-            </div>
-          </div>
-      </div>
+      <LocTempPage/>
       <h3>&nbsp;{msg}</h3>
       <p>{JSON.stringify(coords)}</p>
     </main>

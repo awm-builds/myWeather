@@ -4,7 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import MyWeather from '../MyWeather/MyWeather';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import ThirdPage from '../ThirdPage/ThirdPage';
+import LocTempPage from '../LocTempPage/LocTempPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 
@@ -18,7 +18,7 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/" element={<MyWeather />} />
               <Route path="/ProfilePage" element={<ProfilePage />} />
-              <Route path="/ThirdPage" element={<ThirdPage />} />
+              <Route path="/LocTempPage" element={<LocTempPage />} />
             </Routes>
     </main>
   );
