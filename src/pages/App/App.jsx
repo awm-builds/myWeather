@@ -5,6 +5,7 @@ import './App.css';
 import MyWeather from '../MyWeather/MyWeather';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import LocTempPage from '../LocTempPage/LocTempPage';
+import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 
@@ -17,6 +18,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<MyWeather />} />
+              <Route path="/AuthPage" element={<AuthPage setUser={setUser} />} />
               <Route path="/ProfilePage" element={<ProfilePage />} />
               <Route path="/LocTempPage" element={<LocTempPage />} />
             </Routes>
