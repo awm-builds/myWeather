@@ -20,7 +20,6 @@ export default function App() {
               <Route path="/" element={<MyWeather />} />
               <Route path="/AuthPage" element={<AuthPage setUser={setUser} />} />
               <Route path="/ProfilePage" element={<ProfilePage />} />
-              <Route path="/LocTempPage" element={<LocTempPage />} />
             </Routes>
     </main>
   );
