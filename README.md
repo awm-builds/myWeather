@@ -20,7 +20,7 @@ myWeather is single page application that displays the local weather based on yo
 
 # Getting Started
 
-[myWeather App](#)
+[myWeather App](https://sei-myweather-957e9e461786.herokuapp.com/)
 
 <br>
 <br>
