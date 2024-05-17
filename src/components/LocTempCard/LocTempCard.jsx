@@ -32,7 +32,8 @@ export default function LocTempPage() {
   },[]);
 
   return (
-        <div id="weather_wrapper">
+    <div id="weather_wrapper">
+      <div className="todayTitle">Today</div>
           <div className="weatherCard">
           <div className="currentTemp">
             <span className="tempLabel">Temperature</span>

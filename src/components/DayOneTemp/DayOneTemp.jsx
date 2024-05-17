@@ -32,7 +32,9 @@ export default function DayOneTemp() {
   },[]);
 
   return (
-        <div id="weather_wrapperSM">
+      <>
+      <div id="weather_wrapperSM">
+        <div className="weekday3Title">Today</div>
           <div className="weatherCardSM">
           <div className="currentTempSM">
             <span className="tempLabelSM">Temperature</span>
@@ -60,5 +62,6 @@ export default function DayOneTemp() {
             </div>
           </div>
       </div>
+      </>
   );
 }

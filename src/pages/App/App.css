@@ -39,7 +39,7 @@
 
 #weather_wrapper{
 	width: 400px;
-	margin: 100px auto;
+	margin: 50px auto;
 }
 .weatherCard{
 	width: 400px;
@@ -222,4 +222,18 @@
 	width: 75px;
 	height: 75px;
 	margin: 0px;
+}
+
+.todayTitle {
+	padding-top: 0;
+	margin-bottom: 20px;
+	font-size: 30px;
+	color: white;
+}
+
+.weekday3Title {
+	padding-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: white;
 }
