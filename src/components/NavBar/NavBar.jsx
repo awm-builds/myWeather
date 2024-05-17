@@ -8,13 +8,14 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
+    <nav className="navBar">
       <Link to="/">Home</Link>
-      &nbsp; | &nbsp;
+      &nbsp;&nbsp;&nbsp;
       {/* <Link to="/orders/new">New Order</Link> */}
-      &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
       <span>{new Date().toLocaleString()}</span>
-      &nbsp; | &nbsp;
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
       <span>{ user ?
           < Link to="/" onClick={handleLogOut}>Log Out</Link> 
           :
