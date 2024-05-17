@@ -28,11 +28,39 @@ export default function DayTwoTemp() {
       }
     }
     getCoords();
-  },[]);
+  }, []);
+  
+  let weekday = [
+    'Nope',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
+  function dayTwoDay(dayNum) {
+    if (dayNum > 0 && dayNum < 6) {
+      dayNum = dayNum + 2;
+      return dayNum;
+    } else if (dayNum === 6) {
+      dayNum = 1;
+      return dayNum;
+    } else if (dayNum === 7) {
+      dayNum = 2;
+      return dayNum;
+    }
+  }
+
+  let day = dayTwoDay(new Date().getDay())
+
+  console.log('For Array: ' + day);
 
   return (
     <div id="weather_wrapperSM">
-      <div className="weekday3Title">Today</div>
+      <div className="weekday3Title">{weekday[day]}</div>
           <div className="weatherCardSM">
           <div className="currentTempSM">
             <span className="tempLabelSM">Temperature</span>

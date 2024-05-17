@@ -2,7 +2,11 @@
 myWeather is single page application that displays the local weather based on your given location.
 # Screenshot
 
-<img src="#">
+<img src="/public/img/myWeatherSPA_HP.JPG">
+<br>
+<img src="/public/img/myWeatherSPA_LI.JPG">
+<br>
+<img src="/public/img/myWeatherSPA_SU.JPG">
 
 # Technologies Used
 

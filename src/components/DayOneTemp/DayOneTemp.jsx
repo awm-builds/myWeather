@@ -31,10 +31,33 @@ export default function DayOneTemp() {
     getCoords();
   },[]);
 
+    let weekday = [
+    'Nope',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
+  function dayOneDay(dayNum) {
+    if (dayNum > 0 && dayNum < 7) {
+      dayNum = dayNum + 1;
+      return dayNum;
+    } else if (dayNum === 7) {
+      dayNum = 1;
+      return dayNum;
+    }
+  }
+
+  let day = dayOneDay(new Date().getDay())
+
   return (
       <>
       <div id="weather_wrapperSM">
-        <div className="weekday3Title">Today</div>
+        <div className="weekday3Title">{weekday[day]}</div>
           <div className="weatherCardSM">
           <div className="currentTempSM">
             <span className="tempLabelSM">Temperature</span>
