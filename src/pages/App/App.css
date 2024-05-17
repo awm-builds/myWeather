@@ -21,11 +21,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
-  color: #61dafb;
+  color: hsl(193, 95%, 68%);
 }
 
 @keyframes App-logo-spin {
@@ -236,4 +236,36 @@
 	margin-bottom: 10px;
 	font-size: 20px;
 	color: white;
+}
+
+.homeLink {
+	font-size: 25px;
+}
+
+.inOutLink {
+	font-size: 25px;
+}
+
+.navDate {
+	font-size: 25px;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(196, 219, 254);
+}
+
+/* mouse over link */
+a:hover {
+  color: hsl(193, 95%, 68%);
+}
+
+/* selected link */
+a:active {
+  color: #F2B705;
 }
