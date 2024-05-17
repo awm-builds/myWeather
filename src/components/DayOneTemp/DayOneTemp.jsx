@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react';
 
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
-
+import * as forecastAPI from '../../utilities/forecast-api';
 
 export default function DayOneTemp() {
   
   const [coords,setCoords] = useState(null);
   const [msg, setMsg] = useState('');
-  const [weather, setWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    async function getWeather() {
-      const weather = await weatherAPI.getWeatherForLoc(coords);
-      setWeather(weather);
-      console.log(weather);
+    async function getForecast() {
+      const forecast = await forecastAPI.getForecast3Day(coords);
+      setForecast(forecast);
+      console.log(forecast);
     }
-    if (coords) getWeather();
+    if (coords) getForecast();
   }, [coords])
 
   useEffect(() => {
@@ -36,25 +36,25 @@ export default function DayOneTemp() {
           <div className="weatherCardSM">
           <div className="currentTempSM">
             <span className="tempLabelSM">Temperature</span>
-            <span className="tempSM">{weather?.temp}&#8457;</span>
+            <span className="tempSM">{forecast?.dOneTemp}&#8457;</span>
             <span className="minMaxSM container">
             <div class="row justify-content-center">
-              Low:&nbsp;&nbsp;{weather?.tempMin}&#8457;
+              Low:&nbsp;&nbsp;{forecast?.dOneMinT}&#8457;
             </div>
             <div class="row justify-content-center">
-              High:&nbsp;&nbsp;{weather?.tempMax}&#8457;
+              High:&nbsp;&nbsp;{forecast?.dOneMaxT}&#8457;
             </div>
             </span>
             <span className="locationSM"></span>
             </div>
             <div className="currentWeatherSM">
-            <span className="conditionsSM">{weather?.conditions}<br /><img class="condIcon" src={`https://openweathermap.org/img/wn/${weather?.icon}@2x.png`}/></span>
+            <span className="conditionsSM">{forecast?.dOneCond}<br /><img class="condIcon" src={`https://openweathermap.org/img/wn/${forecast?.dOneIcon}@2x.png`}/></span>
           <div className="infoSM container">
             <div class="row justify-content-center">
-                <span>Humidity:&nbsp;&nbsp;{weather?.humidity}%</span>  
+                <span>Humidity:&nbsp;&nbsp;{forecast?.dOneHumd}%</span>  
             </div>
             <div class="row justify-content-center">
-              <span>Feels like:&nbsp;&nbsp;{weather?.feelsLike}&#8457;</span>
+              <span>Feels like:&nbsp;&nbsp;{forecast?.dOneFeel}&#8457;</span>
             </div>
           </div>
             </div>

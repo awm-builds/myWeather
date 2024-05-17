@@ -36,22 +36,22 @@ export default function MyWeather({ setUser }) {
 
   return (
     <main>
-      <div class="container">
-        <div class="row">
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <LocTempPage/>
           </div>
         </div>
       </div>
-      <div class="container threeDayWthr">
-        <div class="row">
-          <div class="col-sm">
+      <div className="container threeDayWthr">
+        <div className="row">
+          <div className="col-sm">
               <DayOneTemp/>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
               <DayTwoTemp/>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
               <DayThreeTemp/>
           </div>
         </div>

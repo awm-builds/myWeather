@@ -7,7 +7,7 @@ export default class SignUpForm extends Component {
     email: '',
     password: '',
     confirm: '',
-    error: ''
+    error: '',
   };
 
   handleChange = (evt) => {
