@@ -3,7 +3,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
-import LocTempPage from "../LocTempPage/LocTempPage";
+import LocTempPage from "../../components/LocTempCard/LocTempCard";
 
 export default function MyWeather({ setUser }) {
   const [coords,setCoords] = useState(null);

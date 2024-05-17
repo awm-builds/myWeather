@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import SignUpForm from '../SignUpForm/SignUpForm';
+import LoginForm from '../LoginForm/LoginForm';
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
 

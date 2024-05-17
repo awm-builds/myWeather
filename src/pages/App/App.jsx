@@ -4,7 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import MyWeather from '../MyWeather/MyWeather';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import LocTempPage from '../LocTempPage/LocTempPage';
+import LocTempPage from '../../components/LocTempCard/LocTempCard';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 
