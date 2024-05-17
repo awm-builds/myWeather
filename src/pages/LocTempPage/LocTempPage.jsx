@@ -25,7 +25,7 @@ export default function LocTempPage() {
         const coords = await locService.getLocation();
         setCoords(coords);
       } catch {
-        setMsg('No go for location.');
+        setMsg('No location has been given.');
       }
     }
     getCoords();

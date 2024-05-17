@@ -35,7 +35,7 @@ export default function MyWeather({ setUser }) {
     <main>
       <LocTempPage/>
       <h3>&nbsp;{msg}</h3>
-      <p>{JSON.stringify(coords)}</p>
+
     </main>
   );
 }
