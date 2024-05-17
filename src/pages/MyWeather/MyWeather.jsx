@@ -4,6 +4,9 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
 import LocTempPage from "../../components/LocTempCard/LocTempCard";
+import DayOneTemp from "../../components/DayOneTemp/DayOneTemp";
+import DayTwoTemp from "../../components/DayTwoTemp/DayTwoTemp";
+import DayThreeTemp from "../../components/DayThreeTemp/DayThreeTemp";
 
 export default function MyWeather({ setUser }) {
   const [coords,setCoords] = useState(null);
@@ -33,10 +36,27 @@ export default function MyWeather({ setUser }) {
 
   return (
     <main>
-      <LocTempPage/>
-      <h3>&nbsp;{msg}</h3>
-
-    </main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <LocTempPage/>
+          </div>
+        </div>
+      </div>
+      <div class="container threeDayWthr">
+        <div class="row">
+          <div class="col-sm">
+              <DayOneTemp/>
+          </div>
+          <div class="col-sm">
+              <DayTwoTemp/>
+          </div>
+          <div class="col-sm">
+              <DayThreeTemp/>
+          </div>
+        </div>
+      </div>
+  </main>
   );
 }
 

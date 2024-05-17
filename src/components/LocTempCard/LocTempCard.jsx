@@ -37,7 +37,6 @@ export default function LocTempPage() {
           <div className="currentTemp">
             <span className="tempLabel">Temperature</span>
             <span className="temp">{weather?.temp}&#8457;</span>
-            <br />
             <span className="minMax">
             Low:&nbsp;&nbsp;{weather?.tempMin}&#8457;
               <br />

@@ -43,13 +43,13 @@
 }
 .weatherCard{
 	width: 400px;
-	height: 200px;
+	height: 100px;
 	font-family: 'Open Sans';
 	position: relative;
 }
 .currentTemp{
 	width: 220px;
-	height: 200px;
+	height: 244px;
 	background: rgb(41, 41, 41);
 	position: absolute;
 	top: 0;
@@ -65,7 +65,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-  border-radius: 0px 20px 20px 0px;
+  	border-radius: 0px 20px 0px 0px;
 }
 .temp{
 	font-size: 80px;
@@ -84,6 +84,7 @@
 	display: block;
 }
 .conditions{
+	height: 194px;
 	color: white;
 	font-size: 30px;
 	display: block;
@@ -91,23 +92,24 @@
 	text-align: center;
 }
 .info{
+	height: 100px;
 	width: 180px;
 	height: 50px;
-	position: absolute;
+	position: static;
 	bottom: 0;
 	right: 0;
 	background: rgb(42, 178, 234);
-	font-weight: 700;
+	font-weight: 500;
 	color: rgb(255, 255, 255);
 	text-align: center;
     border-radius: 0px 0px 20px 0px;
-	padding: 7px 0px 0px 0;
+	padding: 2px 0px 0px 2px;
 }
 
 .minMax {
 	color: white;
 	font-size: 20px;
-	padding: 10px 20px 0 0;
+	padding: 0px 0px 0px 0px;
 	text-align: center;
 }
 
@@ -125,4 +127,99 @@
 .navBar {
 	background: rgb(62, 78, 159);
 	color: white;
+	border-radius: 10px;
+}
+
+.threeDayWthr {
+	margin: 50px auto;
+	position: relative;
+}
+
+/* 3 Day forecast cards */
+#weather_wrapperSM {
+	width: 300px;
+	margin: 75px auto;
+}
+.weatherCardSM {
+	width: 300px;
+	height: 75px;
+	font-family: 'Open Sans';
+	position: relative;
+}
+.currentTempSM {
+	width: 165px;
+	height: 183px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 30px 0px 0px 30px;
+  	padding: 7.5px 0px 0px 0px;
+}
+.currentWeatherSM {
+	width: 135px;
+	height: 150px;
+	background: rgb(62, 78, 159);
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+  	border-radius: 0px 15px 0px 0px;
+}
+.tempSM {
+	font-size: 60px;
+	text-align: center;
+	display: block;
+	font-weight: 450;
+	color: rgb(255, 255, 255);
+	padding: 0px 0px 0px 0px;
+}
+.locationSM {
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 22px;
+	display: block;
+}
+.conditionsSM {
+	height: 145.5px;
+	color: white;
+	font-size: 22px;
+	display: block;
+	padding: 15px 30px 0 0;
+	text-align: center;
+}
+.infoSM {
+	width: 135px;
+	height: 37.5px;
+	position: static;
+	bottom: 0;
+	right: 0;
+	background: rgb(42, 178, 234);
+	color: rgb(255, 255, 255);
+	text-align: center;
+    border-radius: 0px 0px 15px 0px;
+	padding: 0px 0px 0px 0px;
+	font-size: 13px;
+}
+
+.minMaxSM {
+	color: white;
+	font-size: 15px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+}
+
+.tempLabelSM {
+	color: white;
+	font-size: 15px;
+	padding: 7.5px 15px 0 0;
+	text-align: center;
+}
+
+.condIconSM {
+	width: 75px;
+	height: 75px;
+	margin: 0px;
 }

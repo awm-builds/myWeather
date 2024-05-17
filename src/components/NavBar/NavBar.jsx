@@ -8,18 +8,23 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className="navBar">
-      <Link to="/">Home</Link>
-      &nbsp;&nbsp;&nbsp;
-      {/* <Link to="/orders/new">New Order</Link> */}
-      &nbsp;&nbsp;&nbsp;
-      <span>{new Date().toLocaleString()}</span>
-      &nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;
-      <span>{ user ?
-          < Link to="/" onClick={handleLogOut}>Log Out</Link> 
+<nav className="navbar navbar-inverse navBar">
+    <div className="container-fluid">
+      <div className="navbar-header">    
+        <section className="navbar-brand">
+            <Link to="/">myWeather</Link>
+          </section>
+      </div>
+    <ul className="nav navbar-nav">
+      <li className="nav nav-bar navbar-center">{new Date().toLocaleString()}</li>
+    </ul>
+    <ul className="nav navbar-nav navbar-right">
+        { user ?
+          <li className="glyphicon glyphicon-log-out">< Link to="/" onClick={handleLogOut}>Log Out</Link></li>
           :
-          < Link to="/AuthPage">Log In</Link>}</span>
-    </nav>
+          <li className="glyphicon glyphicon-log-in">< Link to="/AuthPage">Log In</Link></li>}
+    </ul>
+  </div>
+</nav>
   );
 }
