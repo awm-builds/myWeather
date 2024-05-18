@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 
@@ -5,13 +6,14 @@ export default function NavBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
-  }
+}
 
   return (
 <nav className="navbar navbar-inverse navBar">
     <div className="container-fluid">
       <div className="navbar-header">    
         <section className="navbar-brand">
+            <img className="navLogo" src={require('../../img/myWeatherLogo.png')}/>
             <Link className="homeLink" to="/">myWeather</Link>
           </section>
       </div>

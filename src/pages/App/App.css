@@ -269,3 +269,8 @@ a:hover {
 a:active {
   color: #F2B705;
 }
+
+.navLogo {
+	height: 47.5px;
+	width: auto;
+}
