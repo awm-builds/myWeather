@@ -89,10 +89,10 @@ myWeather/
 │   │   └── MyWeather/     # Weather dashboard
 │   └── utilities/         # Helper functions and services
 ├── controllers/           # Express route controllers
-├── models/               # Mongoose data models
-├── config/               # Database and middleware config
-├── routes/               # API route definitions
-└── server.js             # Express server entry point
+├── models/                # Mongoose data models
+├── config/                # Database and middleware config
+├── routes/                # API route definitions
+└── server.js              # Express server entry point
 ```
 
 ## 🔧 Key Features Implementation
