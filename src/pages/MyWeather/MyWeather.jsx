@@ -139,7 +139,7 @@ export default function MyWeather({ setUser }) {
   };
 
   return (
-    <main>
+    <main style={{ paddingBottom: '100px' }}>
       <div className="container">
         <div className="row">
           <div className="col">
