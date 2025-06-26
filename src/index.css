@@ -1,6 +1,14 @@
 /* CSS Custom Properties */
 :root {
-  --blueGrad: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+  --blueGrad: linear-gradient(90deg, #7474BF.form-container {
+  padding: 3vmin;
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  max-width: 1200px;
+  width: 60%;
+  margin: 2vmin auto;
+}8AC7 90%);
   --white: #FFFFFF;
   --tan-1: linear-gradient(to right, #83a4d4, #b6fbff);
   --tan-2: #E7E2DD;
@@ -85,6 +93,8 @@ code {
   background: linear-gradient(to right, #83a4d4, #b6fbff);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  width: 600px;
+  margin: 2vmin auto;
 }
 
 p.error-message {

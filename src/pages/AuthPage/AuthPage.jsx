@@ -5,7 +5,7 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
-    <main>
+    <main className="auth-page">
     <h1 className="Login-SignUp">
     {showSignUp ?
         'Sign Up'
