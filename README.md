@@ -22,7 +22,7 @@ A modern, responsive weather application that provides real-time weather data an
 - **Real-time Coordinates**: Display current latitude/longitude being used
 
 ### 🌦️ **Weather Information**
-- **Current Weather**: Real-time temperature, conditions, humidity, and "feels like" temperature
+- **Current Weather**: Real-time temperature, weather conditions, humidity, and "feels like" temperature
 - **3-Day Forecast**: Extended weather predictions with daily highs and lows
 - **Weather Icons**: Visual weather condition indicators from OpenWeather API
 - **Imperial Units**: Temperature displayed in Fahrenheit
@@ -71,40 +71,6 @@ A modern, responsive weather application that provides real-time weather data an
 - Node.js (v14 or higher)
 - MongoDB (local or Atlas)
 - OpenWeather API key
-
-### **Installation**
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/myWeather.git
-   cd myWeather
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Environment Setup**
-   Create a `.env` file in the root directory:
-   ```env
-   DATABASE_URL=your_mongodb_connection_string
-   SECRET=your_jwt_secret_key
-   API_KEY=your_openweather_api_key
-   ```
-
-4. **Build the React app**
-   ```bash
-   npm run build
-   ```
-
-5. **Start the application**
-   ```bash
-   npm start
-   ```
-
-6. **Access the app**
-   Open [http://localhost:3001](http://localhost:3001) in your browser
 
 ## 🌐 Live Demo
 
@@ -192,13 +158,7 @@ useEffect(() => {
 - [ ] **Historical Data**: Past weather trends and comparisons
 - [ ] **Mobile App**: Native iOS and Android applications
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -207,14 +167,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - [OpenWeather API](https://openweathermap.org/api) for weather data
-- [General Assembly](https://generalassemb.ly/) for project guidance
 - Weather icons and design inspiration from the development community
 
 ## 📞 Contact
 
-**Developer**: [Your Name]  
-**Email**: [your.email@example.com]  
-**GitHub**: [@yourusername](https://github.com/yourusername)  
+**Developer**: awm.builds  
+**GitHub**: [awm-builds](https://github.com/awm-builds)  
 **Live Demo**: [myWeather App](https://sei-myweather-957e9e461786.herokuapp.com/)
 
 ---
