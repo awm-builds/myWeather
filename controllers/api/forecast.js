@@ -6,9 +6,27 @@ const API_KEY = process.env.API_KEY;
 
 
 async function getForecast(req, res) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${req.params.lat}&lon=${req.params.lon}&appid=${API_KEY}&units=imperial`;
-    const data = await fetch(url).then(res => res.json());
-    const forecast = {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${req.params.lat}&lon=${req.params.lon}&appid=${API_KEY}&units=imperial`;
+        console.log('Making forecast request to:', url); // Debug log
+        
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            console.error('OpenWeather Forecast API error:', response.status, response.statusText);
+            return res.status(response.status).json({ error: 'Failed to fetch forecast data' });
+        }
+        
+        const data = await response.json();
+        console.log('OpenWeather Forecast API response:', data); // Debug log
+        
+        // Check if the response has the expected structure
+        if (!data.list || data.list.length < 3) {
+            console.error('Invalid forecast API response structure:', data);
+            return res.status(500).json({ error: 'Invalid forecast data received' });
+        }
+        
+        const forecast = {
  
         dOneCond: data.list[0].weather.icon,
         dOneTemp: Math.trunc(data.list[0].main.temp),
@@ -39,4 +57,8 @@ async function getForecast(req, res) {
 
     };
     res.json(forecast);
+    } catch (error) {
+        console.error('Error fetching forecast data:', error);
+        res.status(500).json({ error: 'Internal server error while fetching forecast data' });
+    }
 }

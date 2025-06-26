@@ -1,39 +1,11 @@
-import { useState, useEffect } from 'react';
-import SignUpForm from '../SignUpForm/SignUpForm';
-import LoginForm from '../LoginForm/LoginForm';
-import * as locService from '../../utilities/loc-service';
-import * as weatherAPI from '../../utilities/weather-api';
-
-export default function LocTempPage() {
-  
-  const [coords,setCoords] = useState(null);
-  const [msg, setMsg] = useState('');
-  const [weather, setWeather] = useState(null);
-
-  useEffect(() => {
-    async function getWeather() {
-      const weather = await weatherAPI.getWeatherForLoc(coords);
-      setWeather(weather);
-      console.log(weather);
-    }
-    if (coords) getWeather();
-  }, [coords])
-
-  useEffect(() => {
-    async function getCoords() {
-      try {
-        const coords = await locService.getLocation();
-        setCoords(coords);
-      } catch {
-        setMsg('No location has been given.');
-      }
-    }
-    getCoords();
-  },[]);
+export default function LocTempPage({ weather, coords, msg }) {
 
   return (
     <div id="weather_wrapper">
       <div className="todayTitle">Today</div>
+      {msg && <div className="error-message" style={{color: 'red', padding: '10px'}}>{msg}</div>}
+      {!weather && !msg && <div className="loading" style={{padding: '10px'}}>Loading weather data...</div>}
+      {weather && (
           <div className="weatherCard">
           <div className="currentTemp">
             <span className="tempLabel">Temperature</span>
@@ -54,6 +26,7 @@ export default function LocTempPage() {
               </div>
             </div>
           </div>
+      )}
       </div>
   );
 }

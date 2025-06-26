@@ -4,32 +4,33 @@ import * as locService from '../../utilities/loc-service';
 import * as weatherAPI from '../../utilities/weather-api';
 import * as forecastAPI from '../../utilities/forecast-api';
 
-export default function DayOneTemp() {
+export default function DayOneTemp({ forecast }) {
   
-  const [coords,setCoords] = useState(null);
-  const [msg, setMsg] = useState('');
-  const [forecast, setForecast] = useState(null);
+  // Remove duplicate state and effects since we're getting forecast from props
+  // const [coords,setCoords] = useState(null);
+  // const [msg, setMsg] = useState('');
+  // const [forecast, setForecast] = useState(null);
 
-  useEffect(() => {
-    async function getForecast() {
-      const forecast = await forecastAPI.getForecast3Day(coords);
-      setForecast(forecast);
-      console.log(forecast);
-    }
-    if (coords) getForecast();
-  }, [coords])
+  // useEffect(() => {
+  //   async function getForecast() {
+  //     const forecast = await forecastAPI.getForecast3Day(coords);
+  //     setForecast(forecast);
+  //     console.log(forecast);
+  //   }
+  //   if (coords) getForecast();
+  // }, [coords])
 
-  useEffect(() => {
-    async function getCoords() {
-      try {
-        const coords = await locService.getLocation();
-        setCoords(coords);
-      } catch {
-        setMsg('No location has been given.');
-      }
-    }
-    getCoords();
-  },[]);
+  // useEffect(() => {
+  //   async function getCoords() {
+  //     try {
+  //       const coords = await locService.getLocation();
+  //       setCoords(coords);
+  //     } catch {
+  //       setMsg('No location has been given.');
+  //     }
+  //   }
+  //   getCoords();
+  // },[]);
 
     let weekday = [
     'Nope',
