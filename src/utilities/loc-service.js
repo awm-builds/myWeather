@@ -9,9 +9,9 @@ export function getLocation() {
         console.log('📍 Requesting geolocation...');
         
         const options = {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 300000 // 5 minutes
+            enableHighAccuracy: false, // Better compatibility with various devices
+            timeout: 10000, // 10 seconds timeout
+            maximumAge: 300000 // 5 minutes cache
         };
 
         navigator.geolocation.getCurrentPosition(
@@ -27,19 +27,19 @@ export function getLocation() {
                 console.error('📍 Error message:', error.message);
                 
                 // Provide a more specific error message
-                let errorMessage = 'Location access failed';
+                let errorMessage = 'GPS location failed';
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
-                        errorMessage = 'Location permission denied by user';
+                        errorMessage = 'Location permission denied';
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        errorMessage = 'Location information unavailable';
+                        errorMessage = 'GPS signal unavailable';
                         break;
                     case error.TIMEOUT:
                         errorMessage = 'Location request timed out';
                         break;
                     default:
-                        errorMessage = 'Unknown location error';
+                        errorMessage = 'Location error occurred';
                         break;
                 }
                 reject(new Error(errorMessage));
@@ -47,6 +47,31 @@ export function getLocation() {
             options
         );
     });
+}
+
+// Get location using IP-based geolocation as alternative
+export async function getLocationByIP() {
+    try {
+        console.log('📍 Trying IP-based location...');
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        if (data.latitude && data.longitude) {
+            console.log('📍 IP location found:', data);
+            return {
+                lat: data.latitude,
+                lon: data.longitude,
+                city: data.city,
+                region: data.region,
+                country: data.country_name
+            };
+        } else {
+            throw new Error('IP location service unavailable');
+        }
+    } catch (error) {
+        console.error('📍 IP location failed:', error);
+        throw new Error('IP-based location failed');
+    }
 }
 
 // Default location (New York City) as fallback
