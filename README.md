@@ -65,13 +65,6 @@ A modern, responsive weather application that provides real-time weather data an
 - **Heroku** - Cloud platform deployment
 - **MongoDB Atlas** - Cloud database hosting
 
-## 🚀 Getting Started
-
-### **Prerequisites**
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- OpenWeather API key
-
 ## 🌐 Live Demo
 
 Visit the live application: [myWeather App](https://sei-myweather-957e9e461786.herokuapp.com/)
