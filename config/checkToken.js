@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = function(req, res, next) {
+  const secret = process.env.JWT_SECRET || process.env.SECRET;
+
   // Check for the token being sent in a header or as a query param
   let token = req.get('Authorization') || req.query.token;
   // Default to null
@@ -9,7 +11,7 @@ module.exports = function(req, res, next) {
   // Remove the 'Bearer ' that was included in the token header
   token = token.replace('Bearer ', '');
   // Check if token is valid and not expired
-  jwt.verify(token, process.env.SECRET, function(err, decoded) {
+  jwt.verify(token, secret, function(err, decoded) {
     // Invalid token if err
     if (err) return next();
     // decoded is the entire token payload

@@ -74,7 +74,7 @@ export default function DayOneTemp({ forecast }) {
             <span className="locationSM"></span>
             </div>
             <div className="currentWeatherSM">
-            <span className="conditionsSM">{forecast?.dOneCond}<br /><img class="condIcon" src={`https://openweathermap.org/img/wn/${forecast?.dOneIcon}@2x.png`}/></span>
+            <span className="conditionsSM">{forecast?.dOneCond}<br /><img class="condIcon" alt={`${forecast?.dOneCond || 'weather'} icon`} src={`https://openweathermap.org/img/wn/${forecast?.dOneIcon}@2x.png`}/></span>
           <div className="infoSM container">
             <div class="row justify-content-center">
                 <span>Humidity:&nbsp;&nbsp;{forecast?.dOneHumd}%</span>  

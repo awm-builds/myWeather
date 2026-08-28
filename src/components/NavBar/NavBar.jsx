@@ -29,7 +29,7 @@ export default function NavBar({ user, setUser }) {
     <div className="container-fluid">
       <div className="navbar-header">    
         <section className="navbar-brand">
-            <img className="navLogo" src={require('../../img/myWeatherLogo.png')}/>
+            <img className="navLogo" alt="myWeather logo" src={require('../../img/myWeatherLogo.png')}/>
             <Link className="homeLink" to="/">myWeather</Link>
           </section>
       </div>

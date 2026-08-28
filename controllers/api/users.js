@@ -40,10 +40,17 @@ async function login(req, res) {
 /*--- Helper Functions --*/
 
 function createJWT(user) {
+  const secret = process.env.JWT_SECRET || process.env.SECRET;
+  const payloadUser = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+  };
+
   return jwt.sign(
     // data payload
-    { user },
-    process.env.SECRET,
+    { user: payloadUser },
+    secret,
     { expiresIn: '24h' }
   );
 }

@@ -1,14 +1,18 @@
 import { getToken } from './users-service';
 
-export default async function sendRequest(url, method = 'GET', payload = null) {
+export default async function sendRequest(url, method = 'GET', payload = null, sendAuth = false) {
   // Fetch accepts an options object as the 2nd argument
   // used to include a data payload, set headers, specifiy the method, etc.
-  const options = { method };
+  const options = {
+    method,
+    // Avoid sending browser cookies on API calls. Large localhost cookies can cause 431 errors.
+    credentials: 'omit',
+  };
   if (payload) {
     options.headers = { 'Content-Type': 'application/json' };
     options.body = JSON.stringify(payload);
   }
-  const token = getToken();
+  const token = sendAuth ? getToken() : null;
   if (token) {
     // Need to add an Authorization header
     // Use the Logical OR Assignment operator

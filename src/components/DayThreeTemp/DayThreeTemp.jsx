@@ -81,7 +81,7 @@ export default function DayThreeTemp({ forecast }) {
             <span className="locationSM"></span>
           </div>
           <div className="currentWeatherSM">
-            <span className="conditionsSM">{forecast?.dThreeCond}<br /><img className="condIcon" src={`https://openweathermap.org/img/wn/${forecast?.dThreeIcon}@2x.png`} /></span>
+            <span className="conditionsSM">{forecast?.dThreeCond}<br /><img className="condIcon" alt={`${forecast?.dThreeCond || 'weather'} icon`} src={`https://openweathermap.org/img/wn/${forecast?.dThreeIcon}@2x.png`} /></span>
             <div className="infoSM container">
               <div className="row justify-content-center">
                 <span>Humidity:&nbsp;&nbsp;{forecast?.dThreeHumd}%</span>

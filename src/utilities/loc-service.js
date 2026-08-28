@@ -49,31 +49,6 @@ export function getLocation() {
     });
 }
 
-// Get location using IP-based geolocation as alternative
-export async function getLocationByIP() {
-    try {
-        console.log('📍 Trying IP-based location...');
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        
-        if (data.latitude && data.longitude) {
-            console.log('📍 IP location found:', data);
-            return {
-                lat: data.latitude,
-                lon: data.longitude,
-                city: data.city,
-                region: data.region,
-                country: data.country_name
-            };
-        } else {
-            throw new Error('IP location service unavailable');
-        }
-    } catch (error) {
-        console.error('📍 IP location failed:', error);
-        throw new Error('IP-based location failed');
-    }
-}
-
 // Default location (New York City) as fallback
 export function getDefaultLocation() {
     console.log('📍 Using default location (NYC)');

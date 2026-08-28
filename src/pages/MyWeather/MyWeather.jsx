@@ -70,23 +70,10 @@ export default function MyWeather({ setUser }) {
         setMsg('Using your current GPS location');
       } catch (error) {
         console.error('📍 GPS location error:', error);
-        console.log('📍 Trying IP-based location...');
-        setMsg('GPS unavailable, trying IP-based location...');
-        
-        try {
-          const ipCoords = await locService.getLocationByIP();
-          console.log('📍 IP location coords received:', ipCoords);
-          setCoords({ lat: ipCoords.lat, lon: ipCoords.lon });
-          setMsg(`Using approximate location: ${ipCoords.city}, ${ipCoords.region}`);
-        } catch (ipError) {
-          console.error('📍 IP location also failed:', ipError);
-          console.log('📍 Falling back to default location');
-          
-          // Use default location as final fallback
-          const defaultCoords = locService.getDefaultLocation();
-          setCoords(defaultCoords);
-          setMsg('Using New York City as default location. Click "Use My Location" to try again.');
-        }
+        console.log('📍 Falling back to default location');
+        const defaultCoords = locService.getDefaultLocation();
+        setCoords(defaultCoords);
+        setMsg('Using New York City as default location. Click "Use My Location" to try again.');
       }
     }
     getCoords();
@@ -96,20 +83,6 @@ export default function MyWeather({ setUser }) {
     console.log('🧪 Testing with NYC coordinates');
     setCoords({ lat: 40.7128, lon: -74.0060 });
     setMsg('Testing with NYC coordinates');
-  };
-
-  const tryIPLocation = async () => {
-    try {
-      console.log('📍 Trying IP-based location...');
-      setMsg('Getting location from IP address...');
-      const ipCoords = await locService.getLocationByIP();
-      console.log('📍 IP location received:', ipCoords);
-      setCoords({ lat: ipCoords.lat, lon: ipCoords.lon });
-      setMsg(`Using IP-based location: ${ipCoords.city}, ${ipCoords.region}`);
-    } catch (error) {
-      console.error('📍 IP location failed:', error);
-      setMsg(`IP-based location failed: ${error.message}`);
-    }
   };
 
   const useMyLocation = async () => {
@@ -122,19 +95,9 @@ export default function MyWeather({ setUser }) {
       setMsg('Using your current GPS location');
     } catch (error) {
       console.error('📍 GPS location retry failed:', error);
-      
-      try {
-        console.log('📍 Trying IP-based location as backup...');
-        setMsg('GPS failed, trying IP-based location...');
-        const ipCoords = await locService.getLocationByIP();
-        console.log('📍 IP location received:', ipCoords);
-        setCoords({ lat: ipCoords.lat, lon: ipCoords.lon });
-        setMsg(`Using approximate location: ${ipCoords.city}, ${ipCoords.region}`);
-      } catch (ipError) {
-        console.error('📍 IP location also failed:', ipError);
-        setMsg(`GPS location failed: ${error.message}. IP location also failed. Using NYC as default.`);
-        // Keep current coordinates (probably NYC fallback)
-      }
+      const defaultCoords = locService.getDefaultLocation();
+      setCoords(defaultCoords);
+      setMsg('GPS location failed. Using New York City as default.');
     }
   };
 
@@ -157,20 +120,6 @@ export default function MyWeather({ setUser }) {
                 }}
               >
                 📍 Use My Location
-              </button>
-              <button 
-                onClick={tryIPLocation}
-                style={{
-                  backgroundColor: '#ffc107',
-                  color: 'black',
-                  padding: '10px 20px',
-                  border: 'none',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  marginRight: '10px'
-                }}
-              >
-                🌐 Try IP Location
               </button>
               <button 
                 onClick={testWithNYC}

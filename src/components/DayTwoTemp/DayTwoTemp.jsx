@@ -77,7 +77,7 @@ export default function DayTwoTemp({ forecast }) {
             <span className="locationSM"></span>
             </div>
             <div className="currentWeatherSM">
-            <span className="conditionsSM">{forecast?.dTwoCond}<br /><img className="condIcon" src={`https://openweathermap.org/img/wn/${forecast?.dTwoIcon}@2x.png`}/></span>
+            <span className="conditionsSM">{forecast?.dTwoCond}<br /><img className="condIcon" alt={`${forecast?.dTwoCond || 'weather'} icon`} src={`https://openweathermap.org/img/wn/${forecast?.dTwoIcon}@2x.png`}/></span>
           <div className="infoSM container">
             <div className="row justify-content-center">
                 <span>Humidity:&nbsp;&nbsp;{forecast?.dTwoHumd}%</span>

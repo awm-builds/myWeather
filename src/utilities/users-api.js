@@ -2,13 +2,13 @@ import sendRequest from "./send-request";
 const BASE_URL = '/api/users';
 
 export async function signUp(userData) {
-  return sendRequest(BASE_URL, 'POST', userData);
+  return sendRequest(BASE_URL, 'POST', userData, false);
 }
 
 export async function login(credentials) {
-  return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
+  return sendRequest(`${BASE_URL}/login`, 'POST', credentials, false);
 }
 
 export async function checkToken() {
-  return sendRequest(`${BASE_URL}/check-token`);
+  return sendRequest(`${BASE_URL}/check-token`, 'GET', null, true);
 }

@@ -59,15 +59,15 @@ A modern, responsive weather application that provides real-time weather data an
 
 ### **External APIs**
 - **OpenWeather API** - Weather data and forecasts
-- **IP Geolocation API** - Location detection via IP address
 
 ### **Deployment**
-- **Heroku** - Cloud platform deployment
-- **MongoDB Atlas** - Cloud database hosting
+- **Fly.io** - Container-based cloud deployment
+- **Docker** - Image build and runtime packaging
+- **MongoDB Atlas** - Managed cloud MongoDB hosting
 
 ## 🌐 Live Demo
 
-Visit the live application: [myWeather App](https://sei-myweather-957e9e461786.herokuapp.com/)
+Visit the live application: _Coming soon on Fly.io_
 
 ## 📂 Project Structure
 
@@ -106,13 +106,8 @@ useEffect(() => {
       const coords = await locService.getLocation(); // GPS
       setCoords(coords);
     } catch (error) {
-      try {
-        const ipCoords = await locService.getLocationByIP(); // IP Fallback
-        setCoords({ lat: ipCoords.lat, lon: ipCoords.lon });
-      } catch (ipError) {
-        const defaultCoords = locService.getDefaultLocation(); // NYC Default
-        setCoords(defaultCoords);
-      }
+      const defaultCoords = locService.getDefaultLocation(); // NYC Default
+      setCoords(defaultCoords);
     }
   }
 }, []);
@@ -150,6 +145,69 @@ useEffect(() => {
 - [ ] **Weather Maps**: Interactive weather radar and satellite imagery
 - [ ] **Historical Data**: Past weather trends and comparisons
 - [ ] **Mobile App**: Native iOS and Android applications
+
+## 🐳 Docker Setup
+
+This repository includes:
+- `Dockerfile` for production image builds
+- `docker-compose.yml` for local app + MongoDB development
+- `.env.example` for required environment variables
+
+### Local development with Docker Compose
+
+1. Copy env template:
+
+```bash
+Copy-Item .env.example .env
+```
+
+2. Build and run:
+
+```bash
+docker compose up --build
+```
+
+3. App URL:
+- `http://localhost:3001`
+
+The compose file starts a local MongoDB container and points `DATABASE_URL` to it.
+
+## 🚀 Fly.io Deployment
+
+This app is MongoDB/Mongoose-based, so in production you should use a managed MongoDB endpoint (for example MongoDB Atlas) and provide its connection string as `DATABASE_URL`.
+
+### Prerequisites
+
+1. Install and authenticate Fly CLI:
+
+```bash
+fly auth login
+```
+
+2. Update app name in `fly.toml`:
+- Set `app = "myweather-app"` to a globally unique name.
+
+1. Set required secrets:
+
+```bash
+fly secrets set DATABASE_URL="mongodb+srv://..."
+fly secrets set JWT_SECRET="your_long_random_secret"
+fly secrets set OPENWEATHER_API_KEY="..."
+```
+
+### Deploy
+
+```bash
+fly launch --no-deploy
+fly deploy
+```
+
+### Verify
+
+```bash
+fly status
+fly logs
+```
 
 
 
