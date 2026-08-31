@@ -224,7 +224,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Developer**: awm.builds  
 **GitHub**: [awm-builds](https://github.com/awm-builds)  
-**Live Demo**: [myWeather App](https://sei-myweather-957e9e461786.herokuapp.com/)
+**Live Demo**: [myWeather App](https://awm-myweather-2026.fly.dev)
 
 ---
 
